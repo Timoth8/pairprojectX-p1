@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "title": "Introduction to AI",
+        "content": "Artificial Intelligence is revolutionizing the world...",
+        "ImgUrl": "https://example.com/ai.jpg",
+        "TagId": 1
+    },
+    {
+        "id": 2,
+        "title": "Best Pizza Recipes",
+        "content": "Here are some delicious pizza recipes you can try at home...",
+        "ImgUrl": "https://example.com/pizza.jpg",
+        "TagId": 2
+    },
+    {
+        "id": 3,
+        "title": "Top Travel Destinations in 2023",
+        "content": "Explore the most beautiful places to visit this year...",
+        "ImgUrl": "https://example.com/travel.jpg",
+        "TagId": 3
+    },
+    {
+        "id": 4,
+        "title": "10 Tips for a Healthy Lifestyle",
+        "content": "Stay healthy with these simple lifestyle changes...",
+        "ImgUrl": "https://example.com/health.jpg",
+        "TagId": 4
+    },
+    {
+        "id": 5,
+        "title": "How to Learn Programming Faster",
+        "content": "Effective strategies to master coding quickly...",
+        "ImgUrl": "https://example.com/programming.jpg",
+        "TagId": 5
+    },
+    {
+        "id": 6,
+        "title": "The Future of Robotics",
+        "content": "Robots are becoming an integral part of our lives...",
+        "ImgUrl": "https://example.com/robotics.jpg",
+        "TagId": 1
+    },
+    {
+        "id": 7,
+        "title": "Delicious Pasta Recipes",
+        "content": "Try these amazing pasta dishes for dinner...",
+        "ImgUrl": "https://example.com/pasta.jpg",
+        "TagId": 2
+    },
+    {
+        "id": 8,
+        "title": "Hidden Gems in Europe",
+        "content": "Discover lesser-known but stunning places in Europe...",
+        "ImgUrl": "https://example.com/europe.jpg",
+        "TagId": 3
+    },
+    {
+        "id": 9,
+        "title": "Benefits of Yoga",
+        "content": "Improve your physical and mental health with yoga...",
+        "ImgUrl": "https://example.com/yoga.jpg",
+        "TagId": 4
+    },
+    {
+        "id": 10,
+        "title": "Online Learning Platforms",
+        "content": "The best platforms to learn new skills online...",
+        "ImgUrl": "https://example.com/online-learning.jpg",
+        "TagId": 5
+    }
+]

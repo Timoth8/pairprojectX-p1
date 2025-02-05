@@ -1,0 +1,17 @@
+[
+    { "id": 1, "postId": 1, "comment": "Great article on AI!" },
+    { "id": 2, "postId": 1, "comment": "I learned a lot, thanks!" },
+    { "id": 3, "postId": 2, "comment": "These pizza recipes are amazing!" },
+    { "id": 4, "postId": 3, "comment": "I can't wait to visit these places!" },
+    { "id": 5, "postId": 4, "comment": "Very helpful tips for staying healthy." },
+    { "id": 6, "postId": 5, "comment": "This helped me improve my coding skills." },
+    { "id": 7, "postId": 6, "comment": "Robotics is fascinating!" },
+    { "id": 8, "postId": 7, "comment": "I tried the pasta recipe, it was delicious!" },
+    { "id": 9, "postId": 8, "comment": "Europe has so many beautiful places." },
+    { "id": 10, "postId": 9, "comment": "Yoga has changed my life for the better." },
+    { "id": 11, "postId": 10, "comment": "These platforms are really useful for learning." },
+    { "id": 12, "postId": 2, "comment": "Can you share more recipes?" },
+    { "id": 13, "postId": 3, "comment": "Which destination do you recommend the most?" },
+    { "id": 14, "postId": 5, "comment": "Do you have any tips for debugging code?" },
+    { "id": 15, "postId": 7, "comment": "What's your favorite pasta dish?" }
+]

@@ -1,0 +1,7 @@
+[
+    { "id": 1, "name": "Technology" },
+    { "id": 2, "name": "Food" },
+    { "id": 3, "name": "Travel" },
+    { "id": 4, "name": "Health" },
+    { "id": 5, "name": "Education" }
+]
