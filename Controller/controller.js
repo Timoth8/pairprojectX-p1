@@ -71,6 +71,34 @@ class Controller {
                 role:role,
                 ProfileId:id
             })
+
+            const nodemailer = require('nodemailer');
+            
+            const transporter = nodemailer.createTransport({
+                service: "Gmail",
+                host: "smtp.gmail.com",
+                port: 465,
+                secure: true,
+                auth: {
+                  user: "siegfreeze@gmail.com",
+                  pass: "vtbr ennn ykqk ldnu",
+                },
+              });
+            
+              let mailOptions = {
+                from: "siegfreeze@gmail.com",
+                to: email,
+                subject: "Hello from Qwack",
+                text: "Welcome to Qwack",
+              };
+            
+             transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                  console.error("Error sending email: ", error);
+                } else {
+                  console.log("Email sent: ", info.response);
+                }
+              });
             
             res.redirect(`/?success=Success create ${username}!`)
         } catch (error) {
