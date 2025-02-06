@@ -75,7 +75,10 @@
             <p>Content: <%= data.content %></p>
             <p>Created Date: <%= data.createdAt %></p>
             <p>Update Date: <%= data.updatedAt %></p>
-            <p>Tag: <%= data.Tag.name %></p>
+            <p><%= data.Tag.name %></p>
+            <% data.Comments.forEach(comment=>{ %>
+                <p style="color: yellowgreen;"> <%= comment.comment %> </p>
+            <% }) %>
         </div>
     </div>
     <% }); %>

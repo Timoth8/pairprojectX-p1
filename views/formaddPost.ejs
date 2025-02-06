@@ -10,36 +10,17 @@
 
 <body>
         <div class="container">
-            <% if (errors) { %>
-                <% errors.split(",").forEach(element=> { %>
-                    <p style="color: red;">
-                        <%= element %>
-                    </p>
-                    <% }) %>
-                        <% } %>
 
                             <h1>Add New Post</h1>
-                            <form method="post" action="/Posts/add">
+                            <form method="post" action="">
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="inputGroupSelect01">Title</label>
                                     <input type="text" class="form-control" aria-describedby="emailHelp" name="title">
-
-                                    <% if (errors) { %>
-                                        <p style="color: red;">
-                                            <%= errors.split(",")[0] %>
-                                        </p>
-                                        <% } %>
                                 </div>
 
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="inputGroupSelect01">Content</label>
                                     <input type="text" class="form-control" aria-describedby="emailHelp" name="Content">
-
-                                    <% if (errors) { %>
-                                        <p style="color: red;">
-                                            <%= errors.split(",")[0] %>
-                                        </p>
-                                        <% } %>
                                 </div>
 
                                   <div class="input-group mb-3">
@@ -52,11 +33,6 @@
                                         <option value="Hard">Education</option>
                                     </select>
 
-                                    <% if (errors) { %>
-                                        <p style="color: red;">
-                                            <%= errors.split(",")[1] %>
-                                        </p>
-                                        <% } %>
                                   </div>
 
                                   <div class="input-group mb-3">
@@ -64,23 +40,12 @@
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="inputGroupSelect01">Image Url</label>
                                     <input type="text" class="form-control" aria-describedby="emailHelp" name="imageUrl">
-
-                                    <% if (errors) { %>
-                                        <p style="color: red;">
-                                            <%= errors.split(",")[0] %>
-                                        </p>
-                                        <% } %>
                                 </div>
 
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="inputGroupSelect01">Created Date</label>
                                     <input type="date" class="form-control" aria-describedby="emailHelp" name="createdDate">
 
-                                    <% if (errors) { %>
-                                        <p style="color: red;">
-                                            <%= errors.split(",")[0] %>
-                                        </p>
-                                        <% } %>
                                 </div>
                                 <button class="btn glass">Submit</button>
                             </form>

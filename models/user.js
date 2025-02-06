@@ -1,3 +1,4 @@
+const {hashPassword, comparePassword} = require('../helper/bcyrpt')
 'use strict';
 const {
   Model
@@ -28,5 +29,9 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'User',
   });
+  User.beforeCreate((input, option) => {
+    input.password = hashPassword(input.password)
+  })
+
   return User;
 };
