@@ -4,6 +4,7 @@ const Controller = require('./Controller/controller')
 
 
 // define the home page route
-router.use('/', Controller.showHomepage)
+router.get('/', Controller.showHomepage)
+router.get('/posts', Controller.showPosts)
 
 module.exports = router
