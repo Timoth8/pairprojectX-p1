@@ -5,6 +5,11 @@
 </head>
 <body style="background-image: url('https://images5.alphacoders.com/360/360516.jpg');">
     <%- include('navbarHP') %>
+<% if (success) { %>
+<h4 style="color: aquamarine;">
+  <%= success %>
+</h4>
+<% } %>
 <div style="text-align: center; width: 40%; margin-left: auto; margin-right: auto; margin-top: 15%;">
   <div class="card text-bg-primary mb-3">
     <div class="card-header">Welcome to Qwack🩷</div>

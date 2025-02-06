@@ -11,32 +11,30 @@
 <body>
         <div class="container">
 
-                            <h1>Add New Post</h1>
-                            <form method="post" action="/post/add">
+                            <h1>Edit Post</h1>
+                            <form method="post" action="/post/edit/<%= data.id %>">
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="inputGroupSelect01">Title</label>
-                                    <input type="text" class="form-control" aria-describedby="emailHelp" name="title">
+                                    <input value="<%= data.title %>" type="text" class="form-control" aria-describedby="emailHelp" name="title">
                                 </div>
 
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="inputGroupSelect01">Content</label>
-                                    <input type="text" class="form-control" aria-describedby="emailHelp" name="content">
+                                    <input value="<%= data.content %>" type="text" class="form-control" aria-describedby="emailHelp" name="content">
                                 </div>
 
                                   <div class="input-group mb-3">
                                     <label class="input-group-text" for="inputGroupSelect01">Tags</label>
                                     <select name="TagId" class="form-select" id="inputGroupSelect01">
-                                        <option selected value="1">Technology</option>
-                                        <option value="2">Food</option>
-                                        <option value="3">Travel</option>
-                                        <option value="4">Health</option>
-                                        <option value="5">Education</option>
+                                        <% tags.forEach(element => { %>
+                                        <option <%= element.id === data.TagId ? "selected" : "" %> value = "<%=element.id %>"> <%=element.name %> </option>
+                                        <% }) %>
                                     </select>
 
                                   </div>
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="inputGroupSelect01">Image Url</label>
-                                    <input type="text" class="form-control" aria-describedby="emailHelp" name="imgUrl">
+                                    <input value="<%= data.imgUrl %>"type="text" class="form-control" aria-describedby="emailHelp" name="imgUrl">
                                 </div>
                                 <button class="btn glass">Submit</button>
                             </form>

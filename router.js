@@ -38,11 +38,13 @@ let userIsAdmin = (req,res,next) => {
     }  
 }
 
-router.get('/post/add', userLoggedIn, userIsAdmin , Controller.showAddPost)
-router.post('/post/add', userLoggedIn, Controller.postAddPost)
+router.get('/post/add', userLoggedIn , Controller.showAddPost)
+router.post('/post/add', userLoggedIn , Controller.postAddPost)
+router.get('/post/edit/:id', Controller.showEditPost)
+router.post('/post/edit/:id', Controller.postEditForm)
 router.get('/regis/:id', Controller.addUserFromRegister)
 router.post('/regis/:id', Controller.postUserFromRegister)
-router.get('/delete/:id/post', userLoggedIn, Controller.deletePost)
-router.get('/delete/:id/comment', userLoggedIn, Controller.deleteComment)
+router.get('/delete/:id/post', userLoggedIn, userIsAdmin, Controller.deletePost)
+
 
 module.exports = router

@@ -1,27 +1,34 @@
-const { Op } = require('sequelize')
+const { Op, where } = require('sequelize')
 const {Comment, Post, Profile, Tag, User} = require('../models/index')
 const {hashPassword, comparePassword} = require('../helper/bcyrpt')
 
 class Controller {
     static async showHomepage (req,res){
         try {
-            res.render('Homepage.ejs')
+            let {success} = req.query
+            res.render('Homepage', {success})
         } catch (error) {
             res.send(error)
         }
     }
     static async showPosts (req,res){
         try {
-            let posts = await Post.findAll({
-                include: [
-                {
-                    model: Tag,
-                },  
-                {
-                    model: Comment
-                }]
-            })
-            res.render('showPost', {posts})
+            let {msg} = req.query
+            let {search} = req.query
+            let posts = await Post.getPostIncludingTagAndComment(Tag, Comment)
+            if (search) {
+                posts = await Post.findAll({
+                        include: [
+                        {model: Tag},  
+                        {model: Comment}],
+                        where: {
+                            title:{
+                                [Op.iLike]: `%${search}%`
+                            }
+                        }
+                    })
+            }
+            res.render('showPost', {posts, msg})
         } catch (error) {
             res.send(error)
         }
@@ -85,7 +92,7 @@ class Controller {
             })
 
             if (user) {
-                let isLoggedIn = comparePassword(user.password, hashPassword(password) )
+                let isLoggedIn = comparePassword(password, user.password)
                 if (isLoggedIn) {
                     req.session.userId = user.id
                     req.session.role = user.role
@@ -112,21 +119,56 @@ class Controller {
     }
     static async postAddPost (req,res){
         try {
-            res.send(`ini post form add Post`)
+            let userId = req.session.userId
+            let {title, content, TagId, imgUrl} = req.body
+            await Post.create({
+                title:title,
+                content:content,
+                imgUrl:imgUrl,
+                TagId:TagId,
+                UserId:userId
+            })
+            res.redirect('/posts')
         } catch (error) {
             res.send(error)
         }
     }
     static async deletePost (req,res){
         try {
-            res.send(`ini buat delete post`)
+            let {id} = req.params
+            await Post.destroy({
+                where: {id:id}
+            })
+            res.redirect('/posts')
         } catch (error) {
             res.send(error)
         }
     }
-    static async deleteComment (req,res){
+    static async showEditPost (req,res){
         try {
-            res.send(`ini buat delete comment`)
+            let {id} = req.params
+            let data = await Post.findOne({where:{id:id}})
+            let tags = await Tag.findAll()
+            console.log(data);
+            
+            res.render('editPost', {data, tags})
+        } catch (error) {
+            res.send(error)
+        }
+    }
+    static async postEditForm (req,res){
+        try {
+            let {id} = req.params
+            let {title, content, TagId, imgUrl} = req.body
+            
+            await Post.update({
+                title:title,
+                content:content,
+                imgUrl:imgUrl,
+                TagId:TagId},{
+                    where: {id}
+            })
+            res.redirect('/posts')
         } catch (error) {
             res.send(error)
         }
