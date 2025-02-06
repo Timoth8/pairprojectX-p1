@@ -18,16 +18,33 @@ class Controller {
             res.send(error)
         }
     }
-    static async showAddUser (req,res){
+    static async showRegisterProfile (req,res){
         try {
-            res.render('login.ejs')
+            res.render('signUp')
         } catch (error) {
             res.send(error)
         }
     }
-    static async postAddUser (req,res){
+    static async postRegisterProfile (req,res){
         try {
-            res.render('login.ejs')
+            let {name, gender, bio, profilePicture, phoneNumber, bornDate} = req.body
+            let data = await Profile.create(req.body)
+
+            res.redirect(`/regis/${data.id}`)
+        } catch (error) {
+            res.send(error)
+        }
+    }
+    static async addUserFromRegister (req,res){
+        try {
+            res.send(`ini form regis`)
+        } catch (error) {
+            res.send(error)
+        }
+    }
+    static async postUserFromRegister (req,res){
+        try {
+            res.send(`ini submit regis`)
         } catch (error) {
             res.send(error)
         }
@@ -43,21 +60,6 @@ class Controller {
         try {
             let {username, password} = req.body
             res.send(`logged in`)
-        } catch (error) {
-            res.send(error)
-        }
-    }
-    static async addUserOrRegister (req,res){
-        try {
-
-            res.send(`ini form regis`)
-        } catch (error) {
-            res.send(error)
-        }
-    }
-    static async postAddUserOrRegister (req,res){
-        try {
-            res.send(`ini submit regis`)
         } catch (error) {
             res.send(error)
         }
