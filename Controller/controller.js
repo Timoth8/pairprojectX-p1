@@ -18,9 +18,38 @@ class Controller {
             res.send(error)
         }
     }
+    static async showAddUser (req,res){
+        try {
+            res.render('login.ejs')
+        } catch (error) {
+            res.send(error)
+        }
+    }
+    static async postAddUser (req,res){
+        try {
+            res.render('login.ejs')
+        } catch (error) {
+            res.send(error)
+        }
+    }
+    static async showLogin (req,res){
+        try {
+            res.render('login.ejs')
+        } catch (error) {
+            res.send(error)
+        }
+    }
+    static async postLogin (req,res){
+        try {
+            let {username, password} = req.body
+            res.send(`logged in`)
+        } catch (error) {
+            res.send(error)
+        }
+    }
     static async addUserOrRegister (req,res){
         try {
-            
+
             res.send(`ini form regis`)
         } catch (error) {
             res.send(error)
@@ -29,6 +58,20 @@ class Controller {
     static async postAddUserOrRegister (req,res){
         try {
             res.send(`ini submit regis`)
+        } catch (error) {
+            res.send(error)
+        }
+    }
+    static async showAddPost (req,res){
+        try {
+            res.send(`ini form add Post`)
+        } catch (error) {
+            res.send(error)
+        }
+    }
+    static async postAddPost (req,res){
+        try {
+            res.send(`ini post form add Post`)
         } catch (error) {
             res.send(error)
         }

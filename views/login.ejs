@@ -111,15 +111,15 @@
 
 <body>
     <div class="login-container">
-        <form class="login-form">
+        <form class="login-form" method="post" action="/login">
             <h2>Login</h2>
             <div class="input-box">
-                <input type="text" required="required" />
+                <input type="text" required="required" name="username"/>
                 <span>Username</span>
                 <i></i>
             </div>
             <div class="input-box">
-                <input type="password" required="required" />
+                <input type="password" required="required" name="password"/>
                 <span>Password</span>
                 <i></i>
             </div>
