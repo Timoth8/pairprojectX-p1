@@ -1,6 +1,8 @@
+const {hashPassword, comparePassword} = require('../helper/bcyrpt')
 'use strict';
 const {
-  Model
+  Model,
+  Op
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
@@ -16,10 +18,46 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
-    username: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    role: DataTypes.STRING,
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty:{
+          msg: `Please input username`
+        }
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        contains:{
+          args:'@',
+          msg: `Please input valid email`
+        },
+        notEmpty:{
+          msg: `Please input your email!`
+        }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty:{
+          msg: `Please input password`
+        }
+      }
+    },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty:{
+          msg: `Please select your role`
+        }
+      }
+    },
     ProfileId: {
       type:DataTypes.INTEGER,
       references: {model:"Profiles", key:"id"}
@@ -28,5 +66,9 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'User',
   });
+  User.beforeCreate((input, option) => {
+    input.password = hashPassword(input.password)
+  })
+
   return User;
 };
