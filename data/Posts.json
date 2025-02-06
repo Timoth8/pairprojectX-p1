@@ -3,7 +3,7 @@
         "id": 1,
         "title": "Introduction to AI",
         "content": "Artificial Intelligence is revolutionizing the world...",
-        "imgUrl": "https://example.com/ai.jpg",
+        "imgUrl": "https://www.jakhoster.com/blog/wp-content/uploads/2023/12/apa-itu-ai.webp",
         "TagId": 1,
         "UserId": 3
     },
@@ -11,7 +11,7 @@
         "id": 2,
         "title": "Best Pizza Recipes",
         "content": "Here are some delicious pizza recipes you can try at home...",
-        "imgUrl": "https://example.com/pizza.jpg",
+        "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Pizza-3007395.jpg/1200px-Pizza-3007395.jpg",
         "TagId": 2,
         "UserId": 3
     },
@@ -19,7 +19,7 @@
         "id": 3,
         "title": "Top Travel Destinations in 2023",
         "content": "Explore the most beautiful places to visit this year...",
-        "imgUrl": "https://example.com/travel.jpg",
+        "imgUrl": "https://idebiz.id/wp-content/uploads/2024/01/Ke-16.jpg",
         "TagId": 3,
         "UserId": 4
     },
@@ -27,7 +27,7 @@
         "id": 4,
         "title": "10 Tips for a Healthy Lifestyle",
         "content": "Stay healthy with these simple lifestyle changes...",
-        "imgUrl": "https://example.com/health.jpg",
+        "imgUrl": "https://worldhealth.net/wp-content/uploads/2024/03/AdobeStock_156496568-scaled.jpeg",
         "TagId": 4,
         "UserId": 5
     },
@@ -35,7 +35,7 @@
         "id": 5,
         "title": "How to Learn Programming Faster",
         "content": "Effective strategies to master coding quickly...",
-        "imgUrl": "https://example.com/programming.jpg",
+        "imgUrl": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29kZGluZ3xlbnwwfHwwfHx8MA%3D%3D",
         "TagId": 5,
         "UserId": 3
     },
@@ -43,7 +43,7 @@
         "id": 6,
         "title": "The Future of Robotics",
         "content": "Robots are becoming an integral part of our lives...",
-        "imgUrl": "https://example.com/robotics.jpg",
+        "imgUrl": "https://blob.cloudcomputing.id/images/9c49d53a-d926-4d62-8f12-49c464b3538b/robot-humanoid-l-min.jpg",
         "TagId": 1,
         "UserId": 4
     },
@@ -51,7 +51,7 @@
         "id": 7,
         "title": "Delicious Pasta Recipes",
         "content": "Try these amazing pasta dishes for dinner...",
-        "imgUrl": "https://example.com/pasta.jpg",
+        "imgUrl": "https://grilledcheesesocial.com/wp-content/uploads/2024/04/penne-alfredo-pasta-recipe-18.jpg",
         "TagId": 2,
         "UserId": 5
     },
@@ -59,7 +59,7 @@
         "id": 8,
         "title": "Hidden Gems in Europe",
         "content": "Discover lesser-known but stunning places in Europe...",
-        "imgUrl": "https://example.com/europe.jpg",
+        "imgUrl": "https://dailytravelpill.com/wp-content/uploads/2020/05/Secret-European-destinations-2.jpg",
         "TagId": 3,
         "UserId": 4
     },
@@ -67,7 +67,7 @@
         "id": 9,
         "title": "Benefits of Yoga",
         "content": "Improve your physical and mental health with yoga...",
-        "imgUrl": "https://example.com/yoga.jpg",
+        "imgUrl": "https://res.cloudinary.com/dk0z4ums3/image/upload/v1608543180/attached_image/mengenal-hatha-yoga-dasar-dari-segala-jenis-yoga.jpg",
         "TagId": 4,
         "UserId": 3
     },
@@ -75,7 +75,7 @@
         "id": 10,
         "title": "Online Learning Platforms",
         "content": "The best platforms to learn new skills online...",
-        "imgUrl": "https://example.com/online-learning.jpg",
+        "imgUrl": "https://www.gemmlearning.com/wp-content/uploads/2017/03/53554297_ml-e1488914235828.jpg",
         "TagId": 5,
         "UserId": 3
     }
