@@ -40,8 +40,8 @@ let userIsAdmin = (req,res,next) => {
 
 router.get('/post/add', userLoggedIn , Controller.showAddPost)
 router.post('/post/add', userLoggedIn , Controller.postAddPost)
-router.get('/post/edit/:id', Controller.showEditPost)
-router.post('/post/edit/:id', Controller.postEditForm)
+router.get('/post/edit/:id', userLoggedIn, userIsAdmin, Controller.showEditPost)
+router.post('/post/edit/:id', userLoggedIn, userIsAdmin, Controller.postEditForm)
 router.get('/regis/:id', Controller.addUserFromRegister)
 router.post('/regis/:id', Controller.postUserFromRegister)
 router.get('/delete/:id/post', userLoggedIn, userIsAdmin, Controller.deletePost)

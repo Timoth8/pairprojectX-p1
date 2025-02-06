@@ -52,7 +52,10 @@ class Controller {
     }
     static async addUserFromRegister (req,res){
         try {
-            res.render('createAcc')
+            let {id} = req.params
+            let { msg } = req.query         
+            res.render('createAcc', {msg, id})
+
         } catch (error) {
             res.send(error)
         }
@@ -71,7 +74,13 @@ class Controller {
             
             res.redirect(`/?success=Success create ${username}!`)
         } catch (error) {
-            res.send(error)
+            let{id} = req.params
+            if (error.name === 'SequelizeValidationError') {
+                let msg = error.errors.map(el => el.message)
+                res.redirect(`/regis/${id}?msg=${msg}`)
+            } else {
+                res.send(error)
+            }
         }
     }
     static async showLogin (req,res){
