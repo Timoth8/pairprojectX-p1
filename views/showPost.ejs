@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>Posts of Qwack</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -65,20 +65,20 @@
 <%- include('navbar') %>
 
 <body>
-    <h1>DIY Platform</h1>
-
+    <% posts.forEach(data => { %>
     <div class="container">
         <div class="image-container">
-            <img src="<%= data.imageUrl %>" alt="Image">
+            <img src="<%= data.imgUrl %>" alt="Image">
         </div>
         <div class="text-container">
             <h1><%= data.title %></h1>
-            <p>Content: <%= data. %></p>
-            <p>Created Date: <%= data.formatDate %></p>
-            <p>Update Date: <%= data. %></p>
-            <p>Tag: <%= data.tagId %></p>
+            <p>Content: <%= data.content %></p>
+            <p>Created Date: <%= data.createdAt %></p>
+            <p>Update Date: <%= data.updatedAt %></p>
+            <p>Tag: <%= data.Tag.name %></p>
         </div>
     </div>
+    <% }); %>
     <%- include('_script') %>
 </body>
 
